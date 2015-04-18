@@ -77,11 +77,57 @@ if (work.jobs.length > 0) {
     	var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
     	$(".work-entry").append(formattedDates);
 
-    		var formattedWorkLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
-    		$(".work-entry").append(formattedWorkLocation);
+    	var formattedWorkLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
+    	$(".work-entry").append(formattedWorkLocation);
     		
-    		var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
-    		$(".work-entry").append(formattedDescription);
+    	var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
+    	$(".work-entry").append(formattedDescription);
+	}
+}
+
+var projects = {
+    "assignments": [
+        {
+            "title": "Corporate Website",
+            "dates": "2003 - 2009",
+            "description": "Breakfast procuring nay end happiness allowance assurance frankness. Met simplicity nor difficulty unreserved who. Entreaties mr conviction dissimilar me astonished estimating cultivated. On no applauded exquisite my additions. Pronounce add boy estimable nay suspected. You sudden nay elinor thirty esteem temper. Quiet leave shy you gay off asked large style. ",
+            "images": [
+                "images/197x148.gif",
+                "images/197x148.gif"
+            ]
+        }
+    ]
+}
+
+/*
+var HTMLprojectStart = '<div class="project-entry"></div>';
+var HTMLprojectTitle = '<a href="#">%data%</a>';
+var HTMLprojectDates = '<div class="date-text">%data%</div>';
+var HTMLprojectDescription = '<p><br>%data%</p>';
+var HTMLprojectImage = '<img src="%data%">';
+*/
+
+if (projects.assignments.length > 0) {
+	$("#projects").append(HTMLprojectStart);
+
+	for (var assignment in projects.assignments) {
+		
+    	var formattedprojectTitle = HTMLprojectTitle.replace("%data%", projects.assignments[assignment].title);
+    	$(".project-entry").append(formattedEmployerTitle);
+
+    	var formattedProjectDates = HTMLprojectDates.replace("%data%", projects.assignments[assignment].dates);
+    	$(".project-entry").append(formattedProjectDates);
+    		
+    	var formattedProjectDescription = HTMLprojectDescription.replace("%data%", projects.assignments[assignment].description);
+    	$(".project-entry").append(formattedProjectDescription);
+
+    	for (var image in projects.assignments[assignment].images) {
+
+    		var formattedProjectImage = HTMLprojectImage.replace("%data%", projects.assignments[assignment].images[image]);
+    		$(".project-entry").append(formattedProjectImage);
+
+    	}
+    	
 	}
 }
 
@@ -120,21 +166,6 @@ var education = {
             "school": "EdX",
             "date": "May 09, 2014",
             "url": "https://courses.edx.org/courses/MITx/6.00.2x/1T2014/"
-        }
-    ]
-}
-
-
-var projects = {
-    "projects": [
-        {
-            "title": "Corporate Website",
-            "dates": "2003 - 2009",
-            "description": "Breakfast procuring nay end happiness allowance assurance frankness. Met simplicity nor difficulty unreserved who. Entreaties mr conviction dissimilar me astonished estimating cultivated. On no applauded exquisite my additions. Pronounce add boy estimable nay suspected. You sudden nay elinor thirty esteem temper. Quiet leave shy you gay off asked large style. ",
-            "images": [
-                "images/197x148.gif",
-                "images/197x148.gif"
-            ]
         }
     ]
 }
